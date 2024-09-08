@@ -1,0 +1,12 @@
+ALTER TABLE Subscribers
+ADD COLUMN Age INT;
+
+DELIMITER //
+CREATE PROCEDURE addAge(IN age INT)
+BEGIN
+ UPDATE Subscribers
+ SET Age = age;
+
+END //
+
+DELIMITER ;
